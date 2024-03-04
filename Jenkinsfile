@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-       tools {
+    tools {
         // Define Node.js tool named 'NodeJS'
         nodejs 'node'
     }
@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from your version control system
-                  git 'https://github.com/KoushaliyaSree/Portfolio1.git'
+                git 'https://github.com/KoushaliyaSree/Portfolio1.git'
             }
         }
 
@@ -21,11 +21,7 @@ pipeline {
             }
         }
 
-        stage('script'){
-            steps {
-                sh 'react-scripts build'
-            }
-        }
+        
 
         stage('Build') {
             steps {
@@ -34,14 +30,19 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('script') {
             steps {
-                // Run tests for your React application
-                echo "npm test"
+                sh 'react-scripts build'
             }
         }
 
-      
+        stage('Test') {
+            steps {
+                // Run tests for your React application
+                echo 'npm test'
+            }
+        }
+
     }
 
     post {
