@@ -18,6 +18,8 @@ pipeline {
             steps {
                 // Install Node.js dependencies using npm
                 sh 'npm install'
+                sh 'npm install -g create-react-app'
+                sh 'npm install --save react react-dom'
             }
         }
 
