@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from your version control system
-                  git branch: 'main', url: 'https://github.com/KoushaliyaSree/Portfolio1.git'
+                  git 'https://github.com/KoushaliyaSree/Portfolio1.git'
             }
         }
 
