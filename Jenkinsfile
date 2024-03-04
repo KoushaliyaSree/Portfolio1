@@ -21,6 +21,12 @@ pipeline {
             }
         }
 
+        stage('script'){
+            steps {
+                sh 'react-scripts build'
+            }
+        }
+
         stage('Build') {
             steps {
                 // Build your React application
